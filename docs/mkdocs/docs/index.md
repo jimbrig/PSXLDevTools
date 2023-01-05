@@ -1,8 +1,8 @@
-[SOURCE_CODE]: ./PSXLDevTools/
-[TESTS]: ./tests/
-[DOCS]: ./docs/
+[SOURCE_CODE]: ./../../PSXLDevTools/
+[TESTS]: ./../../tests/
+[DOCS]: ./
 [DOCS_SITE]: https://docs.jimbrig.com/PSXLDevTools/
-[BIN]: ./bin/
+[BIN]: ./../../bin/
 [CHANGELOG]: ./CHANGELOG.md
 
 
@@ -202,10 +202,6 @@
 </details>
 
 ## Installation
-
-> **Note** View my other PowerShell creations from my [PowerShell Gallery Packages Profile](https://www.powershellgallery.com/profiles/jimbrig)!
-    
-The module `PSXLDevTools` is published on the [PowerShell Gallery](https://powershellgallery.com/PSXLDevTools/) and can be installed via `PowerShellGet` using the command(s) below:
 
 ```powershell
 # Install from the PowerShell Gallery
