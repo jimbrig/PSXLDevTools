@@ -13,6 +13,7 @@
 
 ### Documentation
 
+- Enhance README with collapsible details
 - Fix badge links in README
 - Added markdown-magic js resources
 - Made README awesome
