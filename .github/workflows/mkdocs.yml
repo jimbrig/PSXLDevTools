@@ -16,27 +16,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Python
         uses: actions/setup-python@v2
-        with: 
+        with:
           python-version: 3.x
       - name: Deploy MkDocs
         run: |
           pip install -r requirements.txt
-          mkdocs gh-deploy --force            
-          
-      
-      
-      # - name: Deploy MkDocs
-      #  uses: mhausenblas/mkdocs-deploy-gh-pages@nomaterial # mhausenblas/mkdocs-deploy-gh-pages@master
-      #  env:
-      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #    CONFIG_FILE: Docs/mkdocs/mkdocs.yml
-      #    REQUIREMENTS: Docs/mkdocs/requirements.txt
-          # CUSTOM_DOMAIN: jimbrig.com
-          # DOCS_DIR: Docs/mkdocs/docs
-          # EXTRA_PACKAGES: build-base
-      # uses: actions/setup-python@v2
-      # with:
-      #   python-version: 3.x
-      # - run: pip install mkdocs-material
-      # - run: pip install mkdocs-roamlinks-plugin
-      # - run: mkdocs gh-deploy --force
+          mkdocs gh-deploy --force
