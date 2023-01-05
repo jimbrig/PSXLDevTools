@@ -18,9 +18,9 @@ jobs:
         uses: mhausenblas/mkdocs-deploy-gh-pages@nomaterial # mhausenblas/mkdocs-deploy-gh-pages@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CUSTOM_DOMAIN: jimbrig.com
           CONFIG_FILE: Docs/mkdocs/mkdocs.yml
           REQUIREMENTS: Docs/mkdocs/requirements.txt
+          # CUSTOM_DOMAIN: jimbrig.com
           # DOCS_DIR: Docs/mkdocs/docs
           # EXTRA_PACKAGES: build-base
 
