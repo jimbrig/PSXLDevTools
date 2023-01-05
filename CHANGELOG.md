@@ -13,6 +13,8 @@
 
 ### Documentation
 
+- Added markdown-magic js resources
+- Made README awesome
 - Add image assets to resources
 - Create initial README with ROADMAP
 - Initialize CHANGELOG with git-cliff automation
