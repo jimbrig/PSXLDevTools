@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Export-PowerQueries
+# Export-PowerQuery
 
 ## SYNOPSIS
 Exports Power Queries' M-Code Formulae from an Excel PowerQuery Enabled Workbook to a specified folder.
@@ -13,7 +13,7 @@ Exports Power Queries' M-Code Formulae from an Excel PowerQuery Enabled Workbook
 ## SYNTAX
 
 ```
-Export-PowerQueries [-Path] <String> [[-ExportPath] <String>] [[-Extension] <String>] [-Force]
+Export-PowerQuery [-Path] <String> [[-ExportPath] <String>] [[-Extension] <String>] [-Force]
  [<CommonParameters>]
 ```
 
@@ -30,14 +30,14 @@ the Power Queries' M-Code Formulae from the specified source code folder into th
 
 ### EXAMPLE 1
 ```
-Export-PowerQueries -Path ".\MyWorkbook.xlsx" -ExportPath ".\Source\PowerQuery"
+Export-PowerQuery -Path ".\MyWorkbook.xlsx" -ExportPath ".\Source\PowerQuery"
 Successfully exported MyQuery to file C:\MyProject\Source\PowerQuery\MyQuery.pq
 Successfully exported MyOtherQuery to file C:\MyProject\Source\PowerQuery\MyOtherQuery.pq
 ```
 
 ### EXAMPLE 2
 ```
-Export-PowerQueries -Path .\Test.xlsm -ExportPath .\Source\PQ -Extension .pqm -Force
+Export-PowerQuery -Path .\Test.xlsm -ExportPath .\Source\PQ -Extension .pqm -Force
 Successfully exported MyQuery to file C:\MyProject\Source\PQ\MyQuery.pqm
 Successfully exported MyOtherQuery to file C:\MyProject\Source\PQ\MyOtherQuery.pqm
 ```
