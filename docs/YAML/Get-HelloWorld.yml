@@ -1,0 +1,31 @@
+﻿examples:
+- name: EXAMPLE 1
+  preCode: ''
+  code: Get-HelloWorld
+  postCode: Runs the command
+inputs: []
+links: []
+module:
+  name: PSXLDevTools
+name: Get-HelloWorld
+notes: ''
+optionalParameters:
+- name: Value
+  aliases: []
+  defaultValue: GetHelloWorld
+  description: 'Parameter description can go here or above in format: .PARAMETER  <Parameter-Name>'
+  parameterValueGroup: []
+  pipelineInput: False
+  position: 1
+  type: String
+- name: CommonParameters
+  description: 'This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).'
+outputs:
+- type: System.String
+  description: ''
+requiredParameters: []
+remarks: Returns Hello world
+summary: Returns Hello world
+syntaxes:
+- parameters:
+  - Value
