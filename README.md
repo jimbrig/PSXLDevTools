@@ -19,8 +19,8 @@
     <br><b>Links:</b><br>
     <a href=[SOURCE_CODE]>Source Code</a> |
     <a href="https://docs.jimbrig.com/PSXLDevTools/">Published Documentation</a> |
-    <a href="https://github.com/jimbrig/PSXLDevTools/releases/tag/v0.0.0.9999">Latest Release: <em>Unreleased</em></a> |
-    <a href="https://www.powershellgallery.com/packages/PSClearHost/1.0.0">Published Module (PowerShell Gallery)</a>
+    <a href="https://github.com/jimbrig/PSXLDevTools/releases/tag/v0.0.1">Latest Release: [v0.0.1]</a> |
+    <a href="https://www.powershellgallery.com/packages/PSXLDevTools/">PowerShell Gallery</a>
     <br><br>
     <em>View the repo's <a href=[CHANGELOG]>CHANGELOG</a> for details on the progression of the codebase over time.</em>
     <br><br>
