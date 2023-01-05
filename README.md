@@ -26,7 +26,7 @@
     <br><br>
 </p>
 
-<center>
+<span align="center">
 
 <!-- Badges:Begin -->
 
@@ -42,9 +42,12 @@
 
 <!-- Badges:End -->
 
-</center>
+</span>
 
 ## Contents
+
+<details>
+<summary>Table of Contents</summary>
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
 - [PSXLDevTools](#psxldevtools)
@@ -72,29 +75,137 @@
     - [Changelog](#changelog)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
+</details>
+
 ## Repository
 
-```graphql
-├───.devcontainer
-├───.github
-│   └───workflows
-├───.vscode
+<details>
+<summary>Click to Expand Repository File Structure Diagram</summary>
+
+```powershell
+> tree /F
+<root>
+│
 ├───bin
+│       Install-RequiredModules.ps1
+│       Invoke-PesterStub.ps1
+│       Update-ReadMeIndex.ps1
+│
 ├───docs
 │   └───en-US
+│           about_PSXLDevTools.help.md
+│
 ├───PSXLDevTools
+│   │   PSXLDevTools.psd1
+│   │   PSXLDevTools.psm1
+│   │
 │   ├───Dev
+│   │   │   Invoke-XLBuild.ps1
+│   │   │   New-VBAProject.ps1
+│   │   │   New-VBAProjectConfig.ps1
+│   │   │
 │   │   ├───Exports
+│   │   │       Export-CustomCellStyles.ps1
+│   │   │       Export-DataMashup.ps1
+│   │   │       Export-ListObject.ps1
+│   │   │       Export-ListObjects.ps1
+│   │   │       Export-PowerQuery.ps1
+│   │   │       Export-PowerQueryConnection.ps1
+│   │   │       Export-TableStyles.ps1
+│   │   │       Export-VBAComponent.ps1
+│   │   │       Export-VBAProjectProps.ps1
+│   │   │       Export-VBAReferences.ps1
+│   │   │       Export-WorksheetMetadata.ps1
+│   │   │       Export-XLConditionalFormatting.ps1
+│   │   │       Export-XLCustomLists.ps1
+│   │   │       Export-XLCustomRibbonX.ps1
+│   │   │       Export-XLDataModel.ps1
+│   │   │       Export-XLDataValidation.ps1
+│   │   │       Export-XLDocumentProps.ps1
+│   │   │       Export-XLPivotCache.ps1
+│   │   │       Export-XLPivotTable.ps1
+│   │   │       Export-XLTheme.ps1
+│   │   │       Export-XLThemeColors.ps1
+│   │   │       Export-XLThemeFonts.ps1
+│   │   │
 │   │   └───Imports
+│   │           Import-DataMashup.ps1
+│   │
 │   ├───Private
+│   │       GetHelloWorld.ps1
+│   │
 │   └───Public
+│           Export-PowerQueries.ps1
+│           Get-HelloWorld.ps1
+│
 ├───resources
+│   │   dirtree.js
+│   │   md.config.js
+│   │
 │   └───images
-└───tests
-    └───TestWorkbooks
+│           excel.ico
+│           office365.ico
+│           powershell.ico
+│           powershellcore-preview.ico
+│           powershellcore.png
+│           regedit.ico
+│           win10.ico
+│           windowspowershell.ico
+│
+├───tests
+│   │   Export-PowerQueries.tests.ps1
+│   │   Help.tests.ps1
+│   │   Manifest.tests.ps1
+│   │   Meta.tests.ps1
+│   │   MetaFixers.psm1
+│   │   ScriptAnalyzerSettings.psd1
+│   │
+│   └───TestWorkbooks
+│
+│   .editorconfig
+│   .gitattributes
+│   .gitignore
+│   build.ps1
+│   CHANGELOG.md
+│   cliff.toml
+│   LICENSE
+│   mkdocs.yml
+│   psakeFile.ps1
+│   README.md
+│   RequiredModules.psd1
+│   requirements.psd1
+│
+├───.devcontainer
+│       devcontainer.json
+│       Dockerfile
+│
+├───.github
+│   │   CONTRIBUTING.md
+│   │   ISSUE_TEMPLATE.md
+│   │   PULL_REQUEST_TEMPLATE.md
+│   │
+│   └───workflows
+│           build.yml
+│           changelog.yml
+│           lint.yml
+│           mkdocs.yml
+│           publish.yml
+│           readme.yml
+│           test.yml
+│
+├───.vscode
+│       extensions.json
+│       launch.json
+│       settings.json
+│       tasks.json
 ```
+</details>
 
 ## Installation
+
+> **Note** View my other PowerShell creations from my [PowerShell Gallery Packages Profile](https://www.powershellgallery.com/profiles/jimbrig)!
+    
+The module `PSXLDevTools` is published on the [PowerShell Gallery](https://powershellgallery.com/PSXLDevTools/) and can be installed via `PowerShellGet` using the command(s) below:
 
 ```powershell
 # Install from the PowerShell Gallery
