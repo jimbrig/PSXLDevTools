@@ -13,6 +13,7 @@
 
 ### Documentation
 
+- Fix badge links in README
 - Added markdown-magic js resources
 - Made README awesome
 - Add image assets to resources
