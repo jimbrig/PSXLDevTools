@@ -9,6 +9,10 @@ indent_style = space
 insert_final_newline = true
 end_of_line = crlf
 
+# toml
+[*.{toml}]
+trim_trailing_whitespace = false
+
 # powershell
 [*.{ps1,psm1,psd1}]
 indent_size = 4
@@ -50,7 +54,7 @@ end_of_line = crlf
 
 # markdown
 [*.{md,markdown}]
-trim_trailing_whitespace = true
+trim_trailing_whitespace = false
 
 # XL Themes
 [*{Colors.xml, Fonts.xml, Font.xml, Styles.xml, theme.xml, Theme.xml, theme*.xml, Theme*.xml}]
