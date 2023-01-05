@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Export-PowerQueries</command:name>
+      <command:verb>Export</command:verb>
+      <command:noun>PowerQueries</command:noun>
+      <maml:description>
+        <maml:para>Exports Power Queries' M-Code Formulae from an Excel PowerQuery Enabled Workbook to a specified folder.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This function exports Power Queries' M-Code Formulae from an Excel PowerQuery Enabled Workbook to a specified destination source code folder. This allows for the M-Code to be version controlled and maintained in a source code repository alongside the rest of the workbook's source code (VBA, XML, SQL, DAX, etc.).</maml:para>
+      <maml:para>The function is designed to be used in conjunction with the Import-PowerQueries function, which imports all of the Power Queries' M-Code Formulae from the specified source code folder into the Excel PowerQuery Enabled Workbook.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Export-PowerQueries</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Path</maml:name>
+          <maml:description>
+            <maml:para>The path to the Excel PowerQuery Enabled Workbook.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+          <maml:name>ExportPath</maml:name>
+          <maml:description>
+            <maml:para>(Optional) The path to the folder where the Power Queries' M-Code Formulae will be exported to. If not specified, `&lt;ProjectRoot&gt;/Source/PowerQuery/*` is used as the default source code export path for the queries.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>.\Source\PowerQuery</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+          <maml:name>Extension</maml:name>
+          <maml:description>
+            <maml:para>(Optional) The file extension to use for the exported Power Queries' M-Code Formulae. If not specified, `.pq` is used as the default file extension. Typically, `.pq` is used for Power Query M-Code files, but other extensions are also common such as `.m`, `.pqm`, `.txt`, etc.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>.pq</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Force</maml:name>
+          <maml:description>
+            <maml:para>(Optional) If specified, the function will overwrite any existing files in the specified source code export path.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>The path to the Excel PowerQuery Enabled Workbook.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+        <maml:name>ExportPath</maml:name>
+        <maml:description>
+          <maml:para>(Optional) The path to the folder where the Power Queries' M-Code Formulae will be exported to. If not specified, `&lt;ProjectRoot&gt;/Source/PowerQuery/*` is used as the default source code export path for the queries.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>.\Source\PowerQuery</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+        <maml:name>Extension</maml:name>
+        <maml:description>
+          <maml:para>(Optional) The file extension to use for the exported Power Queries' M-Code Formulae. If not specified, `.pq` is used as the default file extension. Typically, `.pq` is used for Power Query M-Code files, but other extensions are also common such as `.m`, `.pqm`, `.txt`, etc.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>.pq</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Force</maml:name>
+        <maml:description>
+          <maml:para>(Optional) If specified, the function will overwrite any existing files in the specified source code export path.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Collections.ArrayList</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>During Development of Excel based applications, an essential component of developing and maintaining the project's source code is continuous export/import and synchronization of source files with the host application for portability and most of all, version control.</maml:para>
+        <maml:para>One area typically overlooked in this regard is the M-Code behind the Power Query components in the workbook's data model. Whether it be a Dynamic Query, User Defined Function, Query Parameter, Lookup Table, or any other Power Query component type (i.e. template, data source, properties, metadata, etc.), the M-Code behind the scenes is the foundation that all queries are built from and what drives the core behaviour of the query's component.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Export-PowerQueries -Path ".\MyWorkbook.xlsx" -ExportPath ".\Source\PowerQuery"
+Successfully exported MyQuery to file C:\MyProject\Source\PowerQuery\MyQuery.pq
+Successfully exported MyOtherQuery to file C:\MyProject\Source\PowerQuery\MyOtherQuery.pq</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Export-PowerQueries -Path .\Test.xlsm -ExportPath .\Source\PQ -Extension .pqm -Force
+Successfully exported MyQuery to file C:\MyProject\Source\PQ\MyQuery.pqm
+Successfully exported MyOtherQuery to file C:\MyProject\Source\PQ\MyOtherQuery.pqm</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-HelloWorld</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>HelloWorld</command:noun>
+      <maml:description>
+        <maml:para>Returns Hello world</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Returns Hello world</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-HelloWorld</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:description>
+            <maml:para>Parameter description can go here or above in format: .PARAMETER  &lt;Parameter-Name&gt;</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>GetHelloWorld</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:description>
+          <maml:para>Parameter description can go here or above in format: .PARAMETER  &lt;Parameter-Name&gt;</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>GetHelloWorld</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-HelloWorld</dev:code>
+        <dev:remarks>
+          <maml:para>Runs the command</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+</helpItems>
