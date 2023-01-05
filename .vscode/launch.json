@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "PowerShell Launch Script",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": ". 'c:\\Users\\jbriggs010\\.vscode-insiders\\extensions\\ms-vscode.powershell-2022.12.1\\modules\\PowerShellEditorServices\\InvokePesterStub.ps1' -ScriptPath 'c:\\Users\\jbriggs010\\Dev\\jimbrig\\PSXLDevTools\\tests\\Export-PowerQueries.tests.ps1' -All -MinimumVersion5 -Output 'Diagnostic'"
+
+            : ${workspaceFolder}/src/foo.ps1 or Invoke-Pester",
+            "cwd": "${cwd}"
+        },
+        {
+            "name": "PowerShell: Launch Current File",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${file}",
+            "args": []
+        }
+    ]
+}
