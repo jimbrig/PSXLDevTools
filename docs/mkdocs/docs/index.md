@@ -3,7 +3,7 @@
 [DOCS]: ./
 [DOCS_SITE]: https://docs.jimbrig.com/PSXLDevTools/
 [BIN]: ./../../bin/
-[CHANGELOG]: ./CHANGELOG.md
+[CHANGELOG]: ./About/CHANGELOG.md
 
 
 <p style="vertical-alignment:middle">
