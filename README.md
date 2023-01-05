@@ -33,11 +33,12 @@
 [![PowerShell Gallery Version](https://img.shields.io/powershellgallery/v/PSClearHost?color=0092ff&label=PowerShell%20Gallery&logoColor=0092ff)](https://www.powershellgallery.com/packages/PSClearHost/1.0.0)
 
 
-[![Test Module](https://github.com/jimbrig/PSClearHost/actions/workflows/test.yml/badge.svg)](https://github.com/jimbrig/PSClearHost/actions/workflows/test.yml)
-[![Build Module](https://github.com/jimbrig/PSClearHost/actions/workflows/build.yml/badge.svg?branch=develop)](https://github.com/jimbrig/PSClearHost/actions/workflows/build.yml)
-[![Publish Module](https://github.com/jimbrig/PSClearHost/actions/workflows/publish.yml/badge.svg)](https://github.com/jimbrig/PSClearHost/actions/workflows/publish.yml)
-[![Publish Documentation](https://github.com/jimbrig/PSClearHost/actions/workflows/mkdocs.yml/badge.svg)](https://github.com/jimbrig/PSClearHost/actions/workflows/mkdocs.yml)
-[![Automate Changelog](https://github.com/jimbrig/PSClearHost/actions/workflows/changelog.yml/badge.svg)](https://github.com/jimbrig/PSClearHost/actions/workflows/changelog.yml)
+[![Test Module](https://github.com/jimbrig/PSXLDevTools/actions/workflows/test.yml/badge.svg)](https://github.com/jimbrig/PSXLDevTools/actions/workflows/test.yml)
+[![Build Module](https://github.com/jimbrig/PSXLDevTools/actions/workflows/build.yml/badge.svg)](https://github.com/jimbrig/PSXLDevTools/actions/workflows/build.yml)
+[![Publish Module](https://github.com/jimbrig/PSXLDevTools/actions/workflows/publish.yml/badge.svg)](https://github.com/jimbrig/PSXLDevTools/actions/workflows/publish.yml)
+
+[![Publish Documentation](https://github.com/jimbrig/PSXLDevTools/actions/workflows/mkdocs.yml/badge.svg)](https://github.com/jimbrig/PSXLDevTools/actions/workflows/mkdocs.yml)
+[![Automate Changelog](https://github.com/jimbrig/PSXLDevTools/actions/workflows/changelog.yml/badge.svg)](https://github.com/jimbrig/PSXLDevTools/actions/workflows/changelog.yml)
 
 <!-- Badges:End -->
 
