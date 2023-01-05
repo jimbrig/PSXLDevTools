@@ -6,6 +6,11 @@
 
 ## [Unreleased]
 
+### Bug Fixes
+
+- Fix links in README
+- Fixed link in mkdocs homepage
+
 ### Documentation
 
 - Update mkdocs.yml
