@@ -5,13 +5,32 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "PowerShell Launch Script",
+            "name": "Test Module",
             "type": "PowerShell",
             "request": "launch",
+            "script": "${workspaceFolder}/build.ps1",
+            "args": [
+                "-Task",
+                "Test",
+                "-Bootstrap",
+                "-Verbose"
+            ],
+            "cwd": "${workspaceFolder}",
+            "createTemporaryIntegratedConsole": true
+        },
+        {
+            "name": "PowerShell Interactive Session",
+            "type": "PowerShell",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "createTemporaryIntegratedConsole": true
+        },
+        {
+            "name": "PowerShell Invoke Pester Tests",
+            "type": "PowerShell",
+            "cwd": "${workspaceFolder}",
+            "request": "launch",
             "script": ". 'c:\\Users\\jbriggs010\\.vscode-insiders\\extensions\\ms-vscode.powershell-2022.12.1\\modules\\PowerShellEditorServices\\InvokePesterStub.ps1' -ScriptPath 'c:\\Users\\jbriggs010\\Dev\\jimbrig\\PSXLDevTools\\tests\\Export-PowerQueries.tests.ps1' -All -MinimumVersion5 -Output 'Diagnostic'"
-
-            : ${workspaceFolder}/src/foo.ps1 or Invoke-Pester",
-            "cwd": "${cwd}"
         },
         {
             "name": "PowerShell: Launch Current File",
