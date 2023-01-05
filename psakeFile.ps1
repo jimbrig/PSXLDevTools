@@ -4,7 +4,6 @@ Properties {
     $PSBPreference.Help.DefaultLocale = 'en-US'
     $PSBPreference.Test.OutputFile = 'out/testResults.xml'
     $PSBPreference.Build.CopyDirectories = @()
-
     # Publish settings
     if ($galleryApiKey) {
         $PSBPreference.Publish.PSRepositoryApiKey = $galleryApiKey.GetNetworkCredential().password
@@ -32,3 +31,13 @@ Task InstallAct {
 Task TestGHAction -depends Build, InstallAct {
     act -j test -P ubuntu-latest=nektos/act-environments-ubuntu:18.04
 }
+
+Task GenerateYAMLHelp -depends GenerateMarkdown {
+    If (-not (Get-Command New-YamlHelp -CommandType Function -ErrorAction SilentlyContinue)) {
+        Install-Module -Name platyPS -Repository PSGallery -Scope CurrentUser -Force
+    }
+    New-YamlHelp -Path './Docs/en-US' -OutputFolder './Docs/en-US' -Force
+}
+
+
+# Get-HelpPreview -Path .\Docs\en-US\PSXLDevTools-help.xml

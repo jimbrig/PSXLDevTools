@@ -2,9 +2,9 @@
 
 ## PowerShell Gallery
 
-The module `PSClearHost` is published on the [PowerShell Gallery]() here: <https://powershellgallery.com/>
+The module `PSClearHost` is published on the [PowerShell Gallery](https://www.powershellgallery.com): <https://powershellgallery.com/PSXLDevTools/>
 
-View my other PowerShell creations from [My PowerShell Gallery Profile]()!
+View my other PowerShell creations from [My PowerShell Gallery Profile](https://www.powershellgallery.com/profiles/jimbrig)!
 
 ## Changelog
 
