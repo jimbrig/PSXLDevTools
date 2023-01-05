@@ -5,18 +5,28 @@
 [BIN]: ./bin/
 [CHANGELOG]: ./CHANGELOG.md
 
-<span>
-    <h1 align="left">
-        <img src="./resources/images/powershellcore.png" height="10%" width="10%" align=left />
-PSXLDevTools: PowerShell Excel Developer Tools Module
-    </h1>
-</span>
-<img src="./resources/images/excel.ico" align=right />
+
+<p style="vertical-alignment:middle">
+    <img src="./resources/images/powershellcore.png" height="8%" width="8%" align="left">
+    <img src="./resources/images/excel.ico" align="right" style="float:right">
+    <h1 align="center">PSXLDevTools</h1>
+</p>
 <br>
 
-*PowerShell Core Module Containing Various Utility and Helpers for Advanced Office/Excel-based Developers.*
+<p align="center">
+    <b>PowerShell Excel Developer Tools Module</b><br>
+    <em>PowerShell Core Module Containing Various Utility and Helpers for Advanced Office/Excel-based Developers.</em><br>
+    <br><b>Links:</b><br>
+    <a href=[SOURCE_CODE]>Source Code</a> |
+    <a href="https://docs.jimbrig.com/PSXLDevTools/">Published Documentation</a> |
+    <a href="https://github.com/jimbrig/PSXLDevTools/releases/tag/v0.0.0.9999">Latest Release: <em>Unreleased</em></a> |
+    <a href="https://www.powershellgallery.com/packages/PSClearHost/1.0.0">Published Module (PowerShell Gallery)</a>
+    <br><br>
+    <em>View the repo's <a href=[CHANGELOG]>CHANGELOG</a> for details on the progression of the codebase over time.</em>
+    <br><br>
+</p>
 
----
+<center>
 
 <!-- Badges:Begin -->
 
@@ -31,21 +41,57 @@ PSXLDevTools: PowerShell Excel Developer Tools Module
 
 <!-- Badges:End -->
 
----
+</center>
 
-*View the repo's [CHANGELOG] for details on the progression of the codebase over time.*
+## Contents
 
-## Links
+<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+- [PSXLDevTools](#psxldevtools)
+  - [Contents](#contents)
+  - [Repository](#repository)
+  - [Installation](#installation)
+  - [Overview](#overview)
+  - [Roadmap](#roadmap)
+    - [VBA Related](#vba-related)
+      - [Source Code Management](#source-code-management)
+    - [VBA Project Development and Engineering](#vba-project-development-and-engineering)
+    - [VBA Project Builds](#vba-project-builds)
+    - [Excel Workbook Development and Engineering](#excel-workbook-development-and-engineering)
+      - [Office Fluent Ribbon XML](#office-fluent-ribbon-xml)
+      - [Workbook Metadata, Styling, Themes, and Custom Properties](#workbook-metadata-styling-themes-and-custom-properties)
+      - [Workbook Styling, Themes, and Formats](#workbook-styling-themes-and-formats)
+    - [Data Engineering and Modeling with PowerQuery and PowerPivot Data Models](#data-engineering-and-modeling-with-powerquery-and-powerpivot-data-models)
+      - [PowerQuery Source Code Management (M-Code Formulae and Metadata)](#powerquery-source-code-management-m-code-formulae-and-metadata)
+      - [Excel Data Model Integration](#excel-data-model-integration)
+    - [Developer Tool Integration and Automation](#developer-tool-integration-and-automation)
+  - [Appendices](#appendices)
+    - [Contributing](#contributing)
+    - [License](#license)
+    - [Credits](#credits)
+    - [Changelog](#changelog)
+<!-- AUTO-GENERATED-CONTENT:END -->
 
-- [Source Code][SOURCE_CODE]
-- [Published Documentation](https://docs.jimbrig.com/PSXLDevTools/)
-- [Latest Release: *Unreleased*](https://github.com/jimbrig/PSXLDevTools/releases/tag/v0.0.0.9999)
-- [Published Module (PowerShell Gallery)](https://www.powershellgallery.com/packages/PSClearHost/1.0.0)
+## Repository
 
-
-## Overview
-
-`#TODO`
+```graphql
+├───.devcontainer
+├───.github
+│   └───workflows
+├───.vscode
+├───bin
+├───docs
+│   └───en-US
+├───PSXLDevTools
+│   ├───Dev
+│   │   ├───Exports
+│   │   └───Imports
+│   ├───Private
+│   └───Public
+├───resources
+│   └───images
+└───tests
+    └───TestWorkbooks
+```
 
 ## Installation
 
@@ -56,6 +102,10 @@ Install-Module -Name PSXLDevTools -Scope CurrentUser -Force
 # Import the module
 Import-Module -Name PSXLDevTools
 ```
+
+## Overview
+
+`#TODO`
 
 ## Roadmap
 
@@ -174,13 +224,7 @@ Import-Module -Name PSXLDevTools
 - DAXStudio + PowerBI Desktop
 - Excel + VBE Customizations + PowerQuery Editor
 
----
-
-
-`#TODO`
-
-
----
+***
 
 ## Appendices
 
