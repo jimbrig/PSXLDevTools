@@ -11,12 +11,6 @@
 - Fix links in README
 - Fixed link in mkdocs homepage
 
-### Documentation
-
-- Update mkdocs.yml
-
-## [0.0.1] - 2023-01-05
-
 ### Cleanup
 
 - Cleanup unused docs files
@@ -33,6 +27,7 @@
 
 ### Documentation
 
+- Update mkdocs.yml
 - Fix links and HTML in markdown files
 - Update help
 - Add output doc files
