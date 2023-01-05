@@ -6,13 +6,32 @@
 
 ## [Unreleased]
 
+### Documentation
+
+- Update mkdocs.yml
+
+## [0.0.1] - 2023-01-05
+
+### Cleanup
+
+- Cleanup unused docs files
+- Cleanup unnecessary dependencies
+
 ### Configuration
 
+- Tweak psakeFile
+- Add PSScriptAnalyzerSettings.psd1
+- Configure module manifest
+- Tweak .vscode configs
 - Add module dependencies
 - Initialize module/repo structure
 
 ### Documentation
 
+- Fix links and HTML in markdown files
+- Update help
+- Add output doc files
+- Customized mkdocs and moved to separate directory
 - Enhance README with collapsible details
 - Fix badge links in README
 - Added markdown-magic js resources
@@ -23,6 +42,7 @@
 
 ### Features
 
+- Add build task to generate YAML help
 - Add first documented module: Export-PowerQueries.ps1
 - Create roadmap placeholders in Dev for future functions
 - Add bin scripts
@@ -34,6 +54,10 @@
 
 ### Refactoring
 
+- Refactor dependency resolution on builds
+- Rename Export-PowerQueries to PowerQuery for PSScriptAnalyzer
+- Refactor Export-PowerQuery syntax
+- Refactor build.ps1 and psakeFile.ps1
 - Refactor editorconfig for trailing whitespace issues
 
 ### Setup
