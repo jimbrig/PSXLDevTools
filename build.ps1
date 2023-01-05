@@ -3,37 +3,31 @@ param(
     # Build task(s) to execute
     [parameter(ParameterSetName = 'task', position = 0)]
     [ArgumentCompleter( {
-        param($Command, $Parameter, $WordToComplete, $CommandAst, $FakeBoundParams)
-        $psakeFile = './psakeFile.ps1'
-        switch ($Parameter) {
-            'Task' {
-                if ([string]::IsNullOrEmpty($WordToComplete)) {
-                    Get-PSakeScriptTasks -buildFile $psakeFile | Select-Object -ExpandProperty Name
+            param($Command, $Parameter, $WordToComplete, $CommandAst, $FakeBoundParams)
+            $psakeFile = './psakeFile.ps1'
+            switch ($Parameter) {
+                'Task' {
+                    if ([string]::IsNullOrEmpty($WordToComplete)) {
+                        Get-PSakeScriptTasks -buildFile $psakeFile | Select-Object -ExpandProperty Name
+                    } else {
+                        Get-PSakeScriptTasks -buildFile $psakeFile |
+                            Where-Object { $_.Name -match $WordToComplete } |
+                            Select-Object -ExpandProperty Name
+                    }
                 }
-                else {
-                    Get-PSakeScriptTasks -buildFile $psakeFile |
-                        Where-Object { $_.Name -match $WordToComplete } |
-                        Select-Object -ExpandProperty Name
+                Default {
                 }
             }
-            Default {
-            }
-        }
-    })]
+        })]
     [string[]]$Task = 'default',
-
     # Bootstrap dependencies
     [switch]$Bootstrap,
-
     # List available build tasks
     [parameter(ParameterSetName = 'Help')]
     [switch]$Help,
-
+    [pscredential]$PSGalleryApiKey,
     # Optional properties to pass to psake
-    [hashtable]$Properties,
-
-    # Optional parameters to pass to psake
-    [hashtable]$Parameters
+    [hashtable]$Properties
 )
 
 $ErrorActionPreference = 'Stop'
@@ -60,6 +54,10 @@ if ($PSCmdlet.ParameterSetName -eq 'Help') {
         Format-Table -Property Name, Description, Alias, DependsOn
 } else {
     Set-BuildEnvironment -Force
-    Invoke-psake -buildFile $psakeFile -taskList $Task -nologo -properties $Properties -parameters $Parameters
+    $parameters = @{}
+    if ($PSGalleryApiKey) {
+        $parameters['galleryApiKey'] = $PSGalleryApiKey
+    }
+    Invoke-psake -buildFile $psakeFile -taskList $Task -nologo -properties $Properties -parameters $parameters
     exit ([int](-not $psake.build_success))
 }
