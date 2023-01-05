@@ -1,1 +1,203 @@
-* -crlf
+# Set default behavior to automatically normalize line endings.
+*               text=auto
+
+# ------------------------------------------------------------------------------
+# LINGUIST
+# ------------------------------------------------------------------------------
+
+# XML (Excel)
+*.odc           linguist-language=XML
+*.rels          linguist-language=XML
+*.xml           linguist-language=XML
+
+# VBA
+*.bas           linguist-language=VBA
+*.cls           linguist-language=VBA
+*.frm           linguist-language=VBA
+*.vba           linguist-language=VBA
+
+# INI (Config/Properties)
+*.vbaproj       linguist-language=INI
+*.vbp           linguist-language=INI
+*.vbg           linguist-language=INI
+
+# VBScript
+*.vbs           linguist-language=VB
+
+# PowerShell
+*.ps1           linguist-language=PowerShell
+*.psm1          linguist-language=PowerShell
+*.psd1          linguist-language=PowerShell
+
+# C#
+*.cs            linguist-language=C#
+
+# PowerQuery
+# NOTE: probably won't work (https://github.com/github/linguist/blob/master/docs/overrides.md)
+# See PR - https://github.com/github/linguist/pull/4191
+*.pq            linguist-language=PowerQuery linguist-detectable
+*.pqm           linguist-language=PowerQuery linguist-detectable
+*.m             linguist-language=PowerQuery linguist-detectable
+
+# Set HTML, JS, and CSS to Vendored
+*.html          linguist-vendored
+*.htm           linguist-vendored
+*.js            linguist-vendored
+*.css           linguist-vendored
+
+# ------------------------------------------------------------------------------
+# Attributes for PowerShell:
+# ------------------------------------------------------------------------------
+
+# Source files
+# ============
+*.ps1           text eol=crlf
+*.ps1x          text eol=crlf
+*.psm1          text eol=crlf
+*.psd1          text eol=crlf
+*.ps1xml        text eol=crlf
+*.pssc          text eol=crlf
+*.psrc          text eol=crlf
+*.cdxml         text eol=crlf
+*.cs            text eol=crlf diff=csharp
+
+# ------------------------------------------------------------------------------
+# Attributes for Excel VBA and Office Related Projects:
+# ------------------------------------------------------------------------------
+
+# Default Extensions for an Excel VBA Project
+*.bas           text      eol=crlf
+*.cls           text      eol=crlf
+*.frm           text      eol=crlf
+*.dcm           text      eol=crlf
+*.vbaproj       text      eol=crlf
+*.vbp           text      eol=crlf
+*.vbg           text      eol=crlf
+*.txt           text      eol=crlf
+*.log           text      eol=crlf
+*.pq            text      eol=crlf
+*.m             text      eol=crlf
+*.pqm           text      eol=crlf
+
+# Windows Help, Header File
+*.chm           binary    eol=crlf
+*.h             text      eol=crlf
+
+# Themes, Fonts, CustomUI
+*.tbix          binary    eol=crlf
+*.ttf           binary    eol=crlf
+*.customUI      binary    eol=crlf
+
+# Frx, VBAProject.bin, Excel
+*.frx           binary    eol=crlf
+*.bin           binary    eol=crlf
+*.xls           binary    eol=crlf
+*.xlsm          binary    eol=crlf
+*.xlsx          binary    eol=crlf
+*.xlts          binary    eol=crlf
+*.xla           binary    eol=crlf
+*.xlam          binary    eol=crlf
+*.xlsb          binary    eol=crlf
+
+# Executables, Compiler
+*.exe           binary    eol=crlf
+*.iss           text      eol=crlf
+
+# Microsoft
+*.wsf           text      eol=crlf
+*.bat           text      eol=crlf
+*.cmd           text      eol=crlf
+*.vb            text      eol=crlf
+
+# Data Connections
+
+# OfficeDataConnection
+*.odc           text      eol=crlf
+
+# DomainNameServer
+*.dns           text      eol=crlf
+
+# DatabaseDrivers
+*.odbc          binary    eol=crlf
+*.jdbc          binary    eol=crlf
+
+# Office/Documents
+*.doc           diff=astextplain
+*.docx          diff=astextplain
+*.DOC	        diff=astextplain
+*.dot           diff=astextplain
+*.DOT           diff=astextplain
+*.pdf           diff=astextplain
+*.PDF	        diff=astextplain
+*.rtf	        diff=astextplain
+*.RTF	        diff=astextplain
+
+# Binaries
+*.exe           binary
+*.dll           binary
+*.pdb           binary
+*.zip           binary
+
+# Markdown - Detectable
+*.md            linguist-detectable
+
+# Set Diffs for XL Binaries
+*.xla           diff=xl
+*.xlam          diff=xl
+*.xls           diff=xl
+*.xlsb          diff=xl
+*.xlsm          diff=xl
+*.xlsx          diff=xl
+*.xlt           diff=xl
+*.xltm          diff=xl
+*.xltx          diff=xl
+
+
+###############################################################################
+# Set the merge driver for project and solution files
+#
+# Merging from the command prompt will add diff markers to the files if there
+# are conflicts (Merging from VS is not affected by the settings below, in VS
+# the diff markers are never inserted). Diff markers may cause the following
+# file extensions to fail to load in VS. An alternative would be to treat
+# these files as binary and thus will always conflict and require user
+# intervention with every merge. To do so, just comment the entries below and
+# uncomment the group further below
+###############################################################################
+
+*.sln        text eol=crlf
+*.csproj     text eol=crlf
+*.vbproj     text eol=crlf
+*.vcxproj    text eol=crlf
+*.vcproj     text eol=crlf
+*.dbproj     text eol=crlf
+*.fsproj     text eol=crlf
+*.lsproj     text eol=crlf
+*.wixproj    text eol=crlf
+*.modelproj  text eol=crlf
+*.sqlproj    text eol=crlf
+*.wwaproj    text eol=crlf
+
+*.xproj      text eol=crlf
+*.props      text eol=crlf
+*.filters    text eol=crlf
+*.vcxitems   text eol=crlf
+
+
+#*.sln       merge=binary
+#*.csproj    merge=binary
+#*.vbproj    merge=binary
+#*.vcxproj   merge=binary
+#*.vcproj    merge=binary
+#*.dbproj    merge=binary
+#*.fsproj    merge=binary
+#*.lsproj    merge=binary
+#*.wixproj   merge=binary
+#*.modelproj merge=binary
+#*.sqlproj   merge=binary
+#*.wwaproj   merge=binary
+
+#*.xproj     merge=binary
+#*.props     merge=binary
+#*.filters   merge=binary
+#*.vcxitems  merge=binary

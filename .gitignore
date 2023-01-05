@@ -1,6 +1,68 @@
-# Don't check in the Output dir
+# ------------------------------
+# PowerShell Module
+# ------------------------------
+
+# Ignore Output, Scratch, Temp, Test Results
 Output/
-
 scratch/
-
+temp/
+tmp/
 testResults.xml
+
+# ------------------------------
+# Excel Add-In/Package Projects
+# ------------------------------
+
+# Excel temporary files
+~*
+~$*
+~$*.xla
+~$*.xlam
+~$*.xls
+~$*.xlsb
+~$*.xlsm
+~$*.xlsx
+~$*.xlt
+~$*.xltm
+~$*.xltx
+
+# Build files
+Build/Release/
+Build/Debug/
+
+# Excel Workbooks
+# Need to decide to ignore or not
+# Can always build from source but more work
+*.xlsm
+*.xlam
+*.xla
+*.xlsx
+*.xlsb
+
+# Zips
+*.zip
+*.7z
+
+# Windows Image File Caches
+Thumbs.db
+ehthumbs.db
+
+# Folder Configs
+Desktop.ini
+
+# Recycle Bin File Share
+$RECYCLE.BIN/
+
+# Installers
+*.msi
+*.msm
+*.msp
+*.cab
+
+# Dynamic Link Libraries
+*.dll
+
+# Shortcuts
+*.lnk
+
+

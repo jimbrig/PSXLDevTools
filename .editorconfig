@@ -1,0 +1,60 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# root level editorconfig file
+root = true
+
+# windows settings
+[*]
+indent_style = space
+insert_final_newline = true
+end_of_line = crlf
+
+# powershell
+[*.{ps1,psm1,psd1}]
+indent_size = 4
+trim_trailing_whitespace = true
+
+# C#
+[*.{cs}]
+indent_size = 4
+trim_trailing_whitespace = true
+
+# json
+[*.{json}]
+indent_size = 2
+trim_trailing_whitespace = true
+
+[*.config.json]
+indent_style = tab
+end_of_line = crlf
+
+# xml and yml
+[*.{ps1xml,props,xml,yaml,yml}]
+indent_size = 2
+
+# VBA
+[*.{bas,cls,frm,doccls}]
+indent_style = space
+indent_size = 4
+end_of_line = crlf
+
+# PowerQuery
+[*.{pq,pqm,m}]
+indent_style = tab
+end_of_line = crlf
+
+# XL CustomUI
+[customUI.xml, customUI14.xml]
+indent_style = tab
+end_of_line = crlf
+
+# markdown
+[*.{md,markdown}]
+trim_trailing_whitespace = true
+
+# XL Themes
+[*{Colors.xml, Fonts.xml, Font.xml, Styles.xml, theme.xml, Theme.xml, theme*.xml, Theme*.xml}]
+indent_size = 2
+end_of_line = crlf
+
+
