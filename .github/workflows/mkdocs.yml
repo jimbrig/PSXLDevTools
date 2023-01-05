@@ -10,18 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./Docs/mkdocs
+        working-directory: Docs/mkdocs/
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Deply MkDocs
         uses: actions/setup-python@v2
-        with:
+        with: 
           python-version: 3.x
           run: |
             pip install -r requirements.txt
-            mkdocs gh-deploy --force
-            
+            mkdocs gh-deploy --force            
           
       
       
