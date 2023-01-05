@@ -15,7 +15,7 @@ Task Default -depends Test
 Task Test -FromModule PowerShellBuild -minimumVersion '0.6.1'
 
 Task InstallAct {
-    if (-not (Get-Command -Name act -CommandType Application -ErrorAction SilentlyContinue)) {
+    if (-not (Get-Command -name act -CommandType Application -ErrorAction SilentlyContinue)) {
         if ($IsWindows) {
             choco install act-cli
         } elseif ($IsLinux) {
@@ -34,9 +34,9 @@ Task TestGHAction -depends Build, InstallAct {
 
 Task GenerateYAMLHelp -depends GenerateMarkdown {
     If (-not (Get-Command New-YamlHelp -CommandType Function -ErrorAction SilentlyContinue)) {
-        Install-Module -name platyPS -Repository PSGallery -Scope CurrentUser -Force
+        Install-Module -Name platyPS -Repository PSGallery -Scope CurrentUser -Force
     }
-    New-YamlHelp -Path './Docs/en-US' -OutputFolder './Docs/YAML' -Force
+    New-YamlHelp -Path './Docs/en-US' -OutputFolder './Docs/en-US' -Force
 }
 
 
