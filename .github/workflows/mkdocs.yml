@@ -1,0 +1,24 @@
+name: Publish Documentation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, develop]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Deploy MkDocs
+        uses: mhausenblas/mkdocs-deploy-gh-pages@master
+        env:
+          REQUIREMENTS: requirements.txt
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # uses: actions/setup-python@v2
+      # with:
+      #   python-version: 3.x
+      # - run: pip install mkdocs-material
+      # - run: pip install mkdocs-roamlinks-plugin
+      # - run: mkdocs gh-deploy --force
