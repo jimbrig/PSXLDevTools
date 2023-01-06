@@ -104,7 +104,7 @@
             ProjectUri   = 'https://github.com/jimbrig/PSXLDevTools'
 
             # A URL to an icon representing this module.
-            IconUri      = 'https://github.com/jimbrig/PSXLDevTools/blob/main/Resources/images/excel.ico'
+            IconUri      = 'https://github.com/jimbrig/PSXLDevTools/blob/main/resources/images/excel.ico'
 
             # ReleaseNotes of this module
             ReleaseNotes = 'Work in Progress'

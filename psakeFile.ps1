@@ -1,9 +1,10 @@
 Properties {
     # Set this to $true to create a module with a monolithic PSM1
-    $PSBPreference.Build.CompileModule = $false
-    $PSBPreference.Help.DefaultLocale = 'en-US'
-    $PSBPreference.Test.OutputFile = 'out/testResults.xml'
-    $PSBPreference.Build.CopyDirectories = @()
+    # $PSBPreference.Build.CompileModule = $false
+    # $PSBPreference.Help.DefaultLocale = 'en-US'
+    # $PSBPreference.Test.OutputFile = 'out/testResults.xml'
+    # $PSBPreference.Build.CopyDirectories = @()
+    # $PSBPreference.Docs.RootDirectory = 'docs'
     # Publish settings
     if ($galleryApiKey) {
         $PSBPreference.Publish.PSRepositoryApiKey = $galleryApiKey.GetNetworkCredential().password
