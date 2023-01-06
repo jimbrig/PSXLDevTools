@@ -22,12 +22,15 @@ Function Export-PowerQuery {
         (Optional) If specified, the function will overwrite any existing files in the specified source code export path.
     .EXAMPLE
         PS C:\> Export-PowerQuery -Path ".\MyWorkbook.xlsx" -ExportPath ".\Source\PowerQuery"
-        Successfully exported MyQuery to file C:\MyProject\Source\PowerQuery\MyQuery.pq
-        Successfully exported MyOtherQuery to file C:\MyProject\Source\PowerQuery\MyOtherQuery.pq
+
+        Exports all Power Queries' M-Code Formulae from the Excel PowerQuery Enabled Workbook located at
+        `.\MyWorkbook.xlsx` to the folder `.\Source\PowerQuery` using the default file extension `.pq`.
     .EXAMPLE
         PS C:\> Export-PowerQuery -Path .\Test.xlsm -ExportPath .\Source\PQ -Extension .pqm -Force
-        Successfully exported MyQuery to file C:\MyProject\Source\PQ\MyQuery.pqm
-        Successfully exported MyOtherQuery to file C:\MyProject\Source\PQ\MyOtherQuery.pqm
+
+        Exports all Power Queries' M-Code Formulae from the Excel PowerQuery Enabled Workbook located at
+        `.\Test.xlsm` to the folder `.\Source\PQ` using the file extension `.pqm` and overwrites any existing files in the
+        specified source code export path.
     .NOTES
         During Development of Excel based applications, an essential component of developing and maintaining the
         project's source code is continuous export/import and synchronization of source files with the
@@ -41,8 +44,6 @@ Function Export-PowerQuery {
     .COMPONENT
         - [Dependency]: DataMashup PowerShell Module
         - PSXLDevTools
-    # .LINK
-    # .LINK
     #>
 
     [CmdletBinding()]
