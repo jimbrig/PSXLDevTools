@@ -14,4 +14,3 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           target: packages
-          path: PSXLDevTools
