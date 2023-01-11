@@ -9,7 +9,7 @@ jobs:
     name: GithubPackage
     runs-on: ubuntu-latest
     steps:
-      - uses: natescherer/update-powershell-metadata-action@v1
+      - uses: natescherer/publish-powershell-action@v1.0.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           target: packages
