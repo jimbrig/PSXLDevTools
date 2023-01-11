@@ -9,8 +9,10 @@ jobs:
     name: GithubPackage
     runs-on: windows-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Publish GitHub Package
         uses: natescherer/publish-powershell-action@v1.0.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           target: packages
+          path: PSXLDevTools
