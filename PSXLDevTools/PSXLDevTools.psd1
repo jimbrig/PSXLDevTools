@@ -107,10 +107,10 @@
             IconUri      = 'https://github.com/jimbrig/PSXLDevTools/blob/main/Resources/images/excel.ico'
 
             # ReleaseNotes of this module
-            ReleaseNotes = 'Work in Progress'
+            # ReleaseNotes = 'Work in Progress'
 
             # Prerelease string of this module
-            Prerelease   = 'alpha'
+            # Prerelease   = 'alpha'
 
             # Flag to indicate whether the module requires explicit user acceptance for install/update/save
             # RequireLicenseAcceptance = $false
