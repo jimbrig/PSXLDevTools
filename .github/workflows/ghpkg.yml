@@ -13,6 +13,6 @@ jobs:
       - name: Publish GitHub Package
         uses: natescherer/publish-powershell-action@v1.0.3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_PAT }}
           target: packages
           path: PSXLDevTools
