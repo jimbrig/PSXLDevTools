@@ -8,6 +8,7 @@
 
 ### Documentation
 
+- Add publish docs
 - Add new github nuget package badge
 
 ## [0.0.1] - 2023-01-05
