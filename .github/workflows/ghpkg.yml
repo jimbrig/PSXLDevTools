@@ -1,0 +1,16 @@
+name: Publish GitHub NuGet Package
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    name: GithubPackage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: natescherer/update-powershell-metadata-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target: packages
+          path: PSXLDevTools
