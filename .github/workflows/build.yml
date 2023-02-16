@@ -11,5 +11,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build
-        shell: pwsh
-        run: ./build.ps1 -Task Build -Bootstrap
+        shell: pwsh 
+        run: -NonInteractive -NoProfile -File ./build.ps1 -Task Build
