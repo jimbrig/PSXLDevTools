@@ -4,6 +4,12 @@
 [Keep a Changelog](http://keepachangelog.com/) and this project adheres to
 [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+
+### Documentation
+
+- Migrate mkdocs dir
+
 ## [0.0.2] - 2023-02-16
 
 ### Documentation
