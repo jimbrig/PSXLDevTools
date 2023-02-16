@@ -8,12 +8,13 @@
 
 ### Documentation
 
-- Migrate mkdocs dir
+- Update mkdocs
 
 ## [0.0.2] - 2023-02-16
 
 ### Documentation
 
+- Migrate mkdocs dir
 - Add publish docs
 - Add new github nuget package badge
 
