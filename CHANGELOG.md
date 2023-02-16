@@ -4,12 +4,16 @@
 [Keep a Changelog](http://keepachangelog.com/) and this project adheres to
 [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [0.0.2] - 2023-02-16
 
 ### Documentation
 
 - Add publish docs
 - Add new github nuget package badge
+
+### Features
+
+- Add new `Export-XLShapes` function
 
 ## [0.0.1] - 2023-01-05
 
