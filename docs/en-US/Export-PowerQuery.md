@@ -31,16 +31,16 @@ the Power Queries' M-Code Formulae from the specified source code folder into th
 ### EXAMPLE 1
 ```
 Export-PowerQuery -Path ".\MyWorkbook.xlsx" -ExportPath ".\Source\PowerQuery"
-Successfully exported MyQuery to file C:\MyProject\Source\PowerQuery\MyQuery.pq
-Successfully exported MyOtherQuery to file C:\MyProject\Source\PowerQuery\MyOtherQuery.pq
 ```
+
+Successfully exported MyQuery to file C:\MyProject\Source\PowerQuery\MyQuery.pq
 
 ### EXAMPLE 2
 ```
 Export-PowerQuery -Path .\Test.xlsm -ExportPath .\Source\PQ -Extension .pqm -Force
-Successfully exported MyQuery to file C:\MyProject\Source\PQ\MyQuery.pqm
-Successfully exported MyOtherQuery to file C:\MyProject\Source\PQ\MyOtherQuery.pqm
 ```
+
+Successfully exported MyQuery to file C:\MyProject\Source\PQ\MyQuery.pqm
 
 ## PARAMETERS
 

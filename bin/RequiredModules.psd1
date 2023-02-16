@@ -11,6 +11,7 @@
     'PowerShellGet'    = '2.0.4'
     'PSDepend'         = '0.4.0'
     'PSReadLine'       = '2.2.*'
+    'platyPS'          = '0.14.2'
 
     # Production Dependencies
     'DataMashup'       = '*'

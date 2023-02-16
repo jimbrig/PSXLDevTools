@@ -124,13 +124,13 @@
 # Office/Documents
 *.doc           diff=astextplain
 *.docx          diff=astextplain
-*.DOC	        diff=astextplain
+*.DOC            diff=astextplain
 *.dot           diff=astextplain
 *.DOT           diff=astextplain
 *.pdf           diff=astextplain
-*.PDF	        diff=astextplain
-*.rtf	        diff=astextplain
-*.RTF	        diff=astextplain
+*.PDF            diff=astextplain
+*.rtf            diff=astextplain
+*.RTF            diff=astextplain
 
 # Binaries
 *.exe           binary
