@@ -1,4 +1,4 @@
-Function Export-XLShapes {
+﻿Function Export-XLShape {
     <#
     .SYNOPSIS
         Export Excel shapes.
@@ -9,7 +9,7 @@ Function Export-XLShapes {
 
         This script only works on Windows with Excel installed.
 
-        Almos all properties in exported objects are simply copied from underlying API (Excel COM objects).
+        Almost all properties in exported objects are simply copied from underlying API (Excel COM objects).
         So you can find thier meanings or functionalities by searching them on the internet.
 
     .PARAMETER Path
@@ -20,14 +20,14 @@ Function Export-XLShapes {
         If not specified, the script uses its own Excel Application.
 
     .EXAMPLE
-        Export-ExcelShapes -Path .\test.xlsx | Export-Csv -Path .\out.csv -Encoding UTF8 -NotypeInformation
+        PS> Export-ExcelShape -Path .\test.xlsx | Export-Csv -Path .\out.csv -Encoding UTF8 -NotypeInformation
 
         Export shapes in .\test.xlsx as CSV.
     .EXAMPLE
-        Get-ChildItem -Filter *.xlsx | Export-ExcelShapes | Tee-Object -Variable out | Out-GridView
+        PS> Get-ChildItem -Filter *.xlsx | Export-ExcelShape | Tee-Object -Variable out | Out-GridView
 
         Extract shapes from *.xlsx in current directory, Set into $out, and display in gridview.
-#>
+    #>
     [CmdletBinding()]
     Param(
         [Parameter(ValueFromPipeline = $true)]
@@ -248,9 +248,9 @@ Function Export-XLShapes {
             163 = 'msoShapeMathPlus' # Addition symbol +
             164 = 'msoShapeMathMinus' # Subtraction symbol -
             165 = 'msoShapeMathMultiply' # Multiplication symbol x
-            166 = 'msoShapeMathDivide' # Division symbol ��
+            166 = 'msoShapeMathDivide' # Division symbol
             167 = 'msoShapeMathEqual' # Equivalence symbol =
-            168 = 'msoShapeMathNotEqual' # Non-equivalence symbol ��
+            168 = 'msoShapeMathNotEqual' # Non-equivalence symbol
             169 = 'msoShapeCornerTabs' # Four right triangles aligning along a rectangular path; four 'snipped' corners.
             170 = 'msoShapeSquareTabs' # Four small squares that define a rectangular shape
             171 = 'msoShapePlaqueTabs' # Four quarter-circles defining a rectangular shape
@@ -299,86 +299,6 @@ Function Export-XLShapes {
             5  = 'msoFillBackground' # Fill is the same as the background.
             6  = 'msoFillPicture' # Picture fill
         }
-
-        function _exportShape {
-            Param(
-                $WorkbookName,
-                $WorksheetName,
-                $Shape
-            )
-
-            $prop = [Ordered]@{
-                Path                                  = $Path
-                Workbook                              = $WorkbookName
-                Worksheet                             = $WorksheetName
-                Id                                    = $Shape.Id
-                Name                                  = $Shape.Name
-                Type                                  = $Shape.Type
-                TypeName                              = $MsoShapeType[$Shape.Type]
-                AutoShapeType                         = $Shape.AutoShapeType
-                AutoShapeTypeName                     = $MsoAutoShapeType[$Shape.AutoShapeType]
-                ParentGroup                           = $( if ($null -ne $Shape.ParentGroup) { $Shape.ParentGroup.Id } )
-                Text                                  = $( if ($Shape.TextFrame2.HasText) { $Shape.TextFrame2.TextRange.Text } )
-                Visible                               = $Shape.Visible
-                TopLeftCell                           = $Shape.TopLeftCell.Address($False, $False)
-                BottomRightCell                       = $Shape.BottomRightCell.Address($False, $False)
-                Top                                   = $Shape.Top
-                Left                                  = $Shape.Left
-                Width                                 = $Shape.Width
-                Height                                = $Shape.Height
-                HorizontalFlip                        = $Shape.HorizontalFlip
-                VerticalFlip                          = $Shape.VerticalFlip
-                Rotation                              = $Shape.Rotation
-                ZOrderPosition                        = $Shape.ZOrderPosition
-                'Line.BackColor'                      = $Shape.Line.BackColor.RGB
-                'Line.ForeColor'                      = $Shape.Line.ForeColor.RGB
-                'Line.Style'                          = $Shape.Line.Style
-                'Line.StyleName'                      = $MsoLineStyle[$Shape.Line.Style]
-                'Line.Transparency'                   = $Shape.Line.Transparency
-                'Line.Weight'                         = $Shape.Line.Weight
-                'Line.BeginArrowheadStyle'            = $Shape.Line.BeginArrowheadStyle
-                'Line.BeginArrowheadStyleName'        = $MsoArrowheadStyle[$Shape.Line.BeginArrowheadStyle]
-                'Line.EndArrowheadStyle'              = $Shape.Line.EndArrowheadStyle
-                'Line.EndArrowheadStyleName'          = $MsoArrowheadStyle[$Shape.Line.EndArrowheadStyle]
-                'Fill.BackColor'                      = $Shape.Fill.BackColor.RGB
-                'Fill.ForeColor'                      = $Shape.Fill.ForeColor.RGB
-                'Fill.Transparency'                   = $Shape.Fill.Transparency
-                'Fill.Type'                           = $Shape.Fill.Type
-                'Fill.TypeName'                       = $MsoFillType[$Shape.Fill.Type]
-                'Nodes.Count'                         = $Shape.Nodes.Count
-                'Nodes.Points'                        = $(
-                    if (0 -lt $Shape.Nodes.Count) {
-                        # @see https://stackoverflow.com/questions/48168130/how-do-i-move-around-nodes-in-a-shape#answer-48169908
-                        $Shape.Nodes.Insert($Shape.Nodes.Count, 0, 1, 0, 0)
-                        $Shape.Nodes.Delete($Shape.Nodes.Count)
-
-                        $points = '['
-                        for ($i = 1; $i -le $Shape.Nodes.Count; $i++) {
-                            $points += '[{0},{1}],' -f $Shape.Nodes.Item($i).Points[1, 1], $Shape.Nodes.Item($i).Points[1, 2]
-                        }
-                        $points = $points.Substring(0, $points.Length - 1) + ']'
-
-                        Write-Output $points
-                    } else {
-                        Write-Output '[]'
-                    }
-                )
-                'ConnectorFormat.BeginConnectedShape' = $( if ($Shape.ConnectorFormat.BeginConnected) { $Shape.ConnectorFormat.BeginConnectedShape.Id } )
-                'ConnectorFormat.BeginConnectionSite' = $( if ($Shape.ConnectorFormat.BeginConnected) { $Shape.ConnectorFormat.BeginConnectionSite } )
-                'ConnectorFormat.EndConnectedShape'   = $( if ($Shape.ConnectorFormat.EndConnected) { $Shape.ConnectorFormat.EndConnectedShape.Id } )
-                'ConnectorFormat.EndConnectionSite'   = $( if ($Shape.ConnectorFormat.EndConnected) { $Shape.ConnectorFormat.EndConnectionSite } )
-            }
-
-            New-Object -TypeName PSObject -Property $prop
-
-            if ($null -ne $Shape.GroupItems) {
-                for ($i = 1; $i -le $Shape.GroupItems.Count; $i++) {
-                    _exportShape $WorkbookName $WorksheetName $Shape.GroupItems.Item($i)
-                }
-            }
-
-            $Shape = $null
-        }
     }
 
     Process {
@@ -407,7 +327,7 @@ Function Export-XLShapes {
                 Write-Verbose ('Processing Worksheet: {0} (Shapes.Count={1})' -f $sheet.Name, $sheet.Shapes.Count)
 
                 for ($i = 1; $i -le $sheet.Shapes.Count; $i++) {
-                    _exportShape $book.Name $sheet.Name $sheet.Shapes.Item($i)
+                    Export-Shape -WorkbookName $book.Name -WorksheetName $sheet.Name -Shape $sheet.Shapes.Item($i)
                 }
 
                 $sheet = $null
@@ -432,3 +352,85 @@ Function Export-XLShapes {
         }
     }
 }
+
+
+Function Export-Shape {
+    Param(
+        $WorkbookName,
+        $WorksheetName,
+        $Shape
+    )
+
+    $prop = [Ordered]@{
+        Path                                  = $Path
+        Workbook                              = $WorkbookName
+        Worksheet                             = $WorksheetName
+        Id                                    = $Shape.Id
+        Name                                  = $Shape.Name
+        Type                                  = $Shape.Type
+        TypeName                              = $MsoShapeType[$Shape.Type]
+        AutoShapeType                         = $Shape.AutoShapeType
+        AutoShapeTypeName                     = $MsoAutoShapeType[$Shape.AutoShapeType]
+        ParentGroup                           = $( if ($null -ne $Shape.ParentGroup) { $Shape.ParentGroup.Id } )
+        Text                                  = $( if ($Shape.TextFrame2.HasText) { $Shape.TextFrame2.TextRange.Text } )
+        Visible                               = $Shape.Visible
+        TopLeftCell                           = $Shape.TopLeftCell.Address($False, $False)
+        BottomRightCell                       = $Shape.BottomRightCell.Address($False, $False)
+        Top                                   = $Shape.Top
+        Left                                  = $Shape.Left
+        Width                                 = $Shape.Width
+        Height                                = $Shape.Height
+        HorizontalFlip                        = $Shape.HorizontalFlip
+        VerticalFlip                          = $Shape.VerticalFlip
+        Rotation                              = $Shape.Rotation
+        ZOrderPosition                        = $Shape.ZOrderPosition
+        'Line.BackColor'                      = $Shape.Line.BackColor.RGB
+        'Line.ForeColor'                      = $Shape.Line.ForeColor.RGB
+        'Line.Style'                          = $Shape.Line.Style
+        'Line.StyleName'                      = $MsoLineStyle[$Shape.Line.Style]
+        'Line.Transparency'                   = $Shape.Line.Transparency
+        'Line.Weight'                         = $Shape.Line.Weight
+        'Line.BeginArrowheadStyle'            = $Shape.Line.BeginArrowheadStyle
+        'Line.BeginArrowheadStyleName'        = $MsoArrowheadStyle[$Shape.Line.BeginArrowheadStyle]
+        'Line.EndArrowheadStyle'              = $Shape.Line.EndArrowheadStyle
+        'Line.EndArrowheadStyleName'          = $MsoArrowheadStyle[$Shape.Line.EndArrowheadStyle]
+        'Fill.BackColor'                      = $Shape.Fill.BackColor.RGB
+        'Fill.ForeColor'                      = $Shape.Fill.ForeColor.RGB
+        'Fill.Transparency'                   = $Shape.Fill.Transparency
+        'Fill.Type'                           = $Shape.Fill.Type
+        'Fill.TypeName'                       = $MsoFillType[$Shape.Fill.Type]
+        'Nodes.Count'                         = $Shape.Nodes.Count
+        'Nodes.Points'                        = $(
+            if (0 -lt $Shape.Nodes.Count) {
+                # @see https://stackoverflow.com/questions/48168130/how-do-i-move-around-nodes-in-a-shape#answer-48169908
+                $Shape.Nodes.Insert($Shape.Nodes.Count, 0, 1, 0, 0)
+                $Shape.Nodes.Delete($Shape.Nodes.Count)
+
+                $points = '['
+                for ($i = 1; $i -le $Shape.Nodes.Count; $i++) {
+                    $points += '[{0},{1}],' -f $Shape.Nodes.Item($i).Points[1, 1], $Shape.Nodes.Item($i).Points[1, 2]
+                }
+                $points = $points.Substring(0, $points.Length - 1) + ']'
+
+                Write-Output $points
+            } else {
+                Write-Output '[]'
+            }
+        )
+        'ConnectorFormat.BeginConnectedShape' = $( if ($Shape.ConnectorFormat.BeginConnected) { $Shape.ConnectorFormat.BeginConnectedShape.Id } )
+        'ConnectorFormat.BeginConnectionSite' = $( if ($Shape.ConnectorFormat.BeginConnected) { $Shape.ConnectorFormat.BeginConnectionSite } )
+        'ConnectorFormat.EndConnectedShape'   = $( if ($Shape.ConnectorFormat.EndConnected) { $Shape.ConnectorFormat.EndConnectedShape.Id } )
+        'ConnectorFormat.EndConnectionSite'   = $( if ($Shape.ConnectorFormat.EndConnected) { $Shape.ConnectorFormat.EndConnectionSite } )
+    }
+
+    New-Object -TypeName PSObject -Property $prop
+
+    if ($null -ne $Shape.GroupItems) {
+        for ($i = 1; $i -le $Shape.GroupItems.Count; $i++) {
+            Export-Shape -WorkbookName $WorkbookName -WorksheetName $WorksheetName -Shape $Shape.GroupItems.Item($i)
+        }
+    }
+
+    $Shape = $null
+}
+

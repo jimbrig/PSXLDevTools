@@ -10,35 +10,35 @@
 
 <#
 .Synopsis
-	Updates README index from content directories.
+    Updates README index from content directories.
     Originally from https://github.com/nightroman/PowerShelf
 .Description
-	The command scans the contents recursively, finds README.md files and
-	builds the index from their first line headings in the root README.md.
-	The generated list with links is inserted into the root README.md.
-	The index start/end marks are defined by the HTML comments like:
-	given $Content='docs', marks are '<!--docs-->'.
+    The command scans the contents recursively, finds README.md files and
+    builds the index from their first line headings in the root README.md.
+    The generated list with links is inserted into the root README.md.
+    The index start/end marks are defined by the HTML comments like:
+    given $Content='docs', marks are '<!--docs-->'.
 .Parameter Content
-	Specifies the directory to scan with the path relative to root.
+    Specifies the directory to scan with the path relative to root.
     Use '/' as directory separators if it is not the top directory.
 .Parameter Root
-	Specifies the root directory with README.md to be updated.
-	The typical use case is a git repository root.
-	Default: the current location
+    Specifies the root directory with README.md to be updated.
+    The typical use case is a git repository root.
+    Default: the current location
 .Parameter Depth
-	Specifies the recursive scan depth.
-	Default: 0, just top directories.
+    Specifies the recursive scan depth.
+    Default: 0, just top directories.
 .Parameter Descending
-	Tells to sort top directories descending.
+    Tells to sort top directories descending.
 .Parameter NoWarning
-	Tells not to write warnings about no README.
+    Tells not to write warnings about no README.
 .Parameter Skip
-	The script returning true for the directories to skip.
-	Argument 1: directory path like $Content[/dir1[/...]]
+    The script returning true for the directories to skip.
+    Argument 1: directory path like $Content[/dir1[/...]]
 .Link
-	Example: https://github.com/nightroman/PowerShellTraps
+    Example: https://github.com/nightroman/PowerShellTraps
 .Link
-	Originally from https://github.com/nightroman/PowerShelf
+    Originally from https://github.com/nightroman/PowerShelf
 #>
 
 [CmdletBinding()]

@@ -21,13 +21,13 @@ Function Export-PowerQuery {
     .PARAMETER Force
         (Optional) If specified, the function will overwrite any existing files in the specified source code export path.
     .EXAMPLE
-        PS C:\> Export-PowerQuery -Path ".\MyWorkbook.xlsx" -ExportPath ".\Source\PowerQuery"
+        Export-PowerQuery -Path ".\MyWorkbook.xlsx" -ExportPath ".\Source\PowerQuery"
+
         Successfully exported MyQuery to file C:\MyProject\Source\PowerQuery\MyQuery.pq
-        Successfully exported MyOtherQuery to file C:\MyProject\Source\PowerQuery\MyOtherQuery.pq
     .EXAMPLE
         PS C:\> Export-PowerQuery -Path .\Test.xlsm -ExportPath .\Source\PQ -Extension .pqm -Force
+
         Successfully exported MyQuery to file C:\MyProject\Source\PQ\MyQuery.pqm
-        Successfully exported MyOtherQuery to file C:\MyProject\Source\PQ\MyOtherQuery.pqm
     .NOTES
         During Development of Excel based applications, an essential component of developing and maintaining the
         project's source code is continuous export/import and synchronization of source files with the
