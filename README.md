@@ -19,7 +19,7 @@
     <br><b>Links:</b><br>
     <a href=[SOURCE_CODE]>Source Code</a> |
     <a href="https://docs.jimbrig.com/PSXLDevTools/">Published Documentation</a> |
-    <a href="https://github.com/jimbrig/PSXLDevTools/releases/tag/v0.0.1">Latest Release: [v0.0.1]</a> |
+    <a href="https://github.com/jimbrig/PSXLDevTools/releases/tag/v0.0.2">Latest Release: [v0.0.2]</a> |
     <a href="https://www.powershellgallery.com/packages/PSXLDevTools/">PowerShell Gallery</a>
     <br><br>
     <em>View the repo's <a href=[CHANGELOG]>CHANGELOG</a> for details on the progression of the codebase over time.</em>
@@ -30,7 +30,7 @@
 
 <!-- Badges:Begin -->
 
-[![PowerShell Gallery Version](https://img.shields.io/powershellgallery/v/PSClearHost?color=0092ff&label=PowerShell%20Gallery&logoColor=0092ff)](https://www.powershellgallery.com/packages/PSClearHost/1.0.0)
+[![PowerShell Gallery Version](https://img.shields.io/powershellgallery/v/PSXLDevTools?color=0092ff&label=PowerShell%20Gallery&logoColor=0092ff)](https://www.powershellgallery.com/packages/PSXLDevTools/)
 [![Publish GitHub NuGet Package](https://github.com/jimbrig/PSXLDevTools/actions/workflows/ghpkg.yml/badge.svg)](https://github.com/jimbrig/PSXLDevTools/actions/workflows/ghpkg.yml)
 
 [![Test Module](https://github.com/jimbrig/PSXLDevTools/actions/workflows/test.yml/badge.svg)](https://github.com/jimbrig/PSXLDevTools/actions/workflows/test.yml)
