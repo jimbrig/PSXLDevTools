@@ -13,8 +13,9 @@ jobs:
         id: PSCache
         uses: actions/cache@v3
         with: 
-          path: "~/AppData/Local/Temp/PowerShell/Modules"
-          key: ${{ runner.os }}-Dependencies
+          path: PSCache
+          key: PSCache-${{ runner.os }}-Dependencies
+          enableCrossOsArchive: true
       - name: 'Trust PSGallery'
         shell: pwsh
         run: |
