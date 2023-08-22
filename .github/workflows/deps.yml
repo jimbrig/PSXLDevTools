@@ -1,0 +1,27 @@
+name: 'Install Dependencies'
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+jobs:
+  install:
+    name: 'Install and Cache PowerShell Modules'
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: 'Setup Cache'
+        id: PSCache
+        uses: actions/cache@v3
+        with: 
+          path: "~/AppData/Local/Temp/PowerShell/Modules"
+          key: ${{ runner.os }}-Dependencies
+      - name: 'Trust PSGallery'
+        shell: pwsh
+        run: |
+          Set-PSRepository PSGallery -InstallationPolicy Trusted
+      - name: 'Install Modules'
+        if: steps.PSCache.outputs.cache-hit != 'true'
+        shell: pwsh
+        run: |
+          Install-Module PSScriptAnalyzer -ErrorAction Stop         
+          
