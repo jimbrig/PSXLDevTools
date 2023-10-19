@@ -340,6 +340,10 @@ Import-Module -Name PSXLDevTools
 
 ## Appendices
 
+### Code of Conduct
+
+[Code of Conduct](https://github.com/jimbrig/PSXLDevTools?tab=coc-ov-file)
+
 ### Contributing
 
 `#TODO`
